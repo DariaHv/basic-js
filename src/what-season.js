@@ -13,13 +13,11 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 function getSeason(date) {
-  
-  throw new NotImplementedError('Not implemented');
   if(date === undefined) return 'Unable to determine the time of year!';
   //try{
-  if(!date instanceof Date || isNaN(date.valueOf())) throw { message: 'Invalid date!' };  
-  month =date.getMonth();//}catch (e) { console.error("Invalid date!"); return true;}
-  //if (!([0,1,2,3,4,5,6,7,8,9,10,11].includes(month) ))throw true;
+  if(!date instanceof Date || isNaN(date.valueOf())) {
+  throw new Error("'arr' parameter must be an instance of the Array!");}
+  month =date.getMonth();
   if ([0,1,11].includes(month) ) return "winter";
   if ([2,3,4].includes(month) ) return "spring";
   if ([5,6,7].includes(month) ) return "summer";
