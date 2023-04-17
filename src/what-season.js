@@ -17,7 +17,8 @@ function getSeason(date) {
   //try{
   if(!date instanceof Date || isNaN(date.valueOf())) {
   throw new Error("'arr' parameter must be an instance of the Array!");}
-  month =date.getMonth();
+  month =date.getMonth();//}catch (e) { console.error("Invalid date!"); return true;}
+  //if (!([0,1,2,3,4,5,6,7,8,9,10,11].includes(month) ))throw true;
   if ([0,1,11].includes(month) ) return "winter";
   if ([2,3,4].includes(month) ) return "spring";
   if ([5,6,7].includes(month) ) return "summer";
